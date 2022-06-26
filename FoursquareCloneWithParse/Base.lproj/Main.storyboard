@@ -119,11 +119,66 @@
                         <outlet property="placesTableView" destination="HU6-sW-iy6" id="dNi-G5-3m3"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSingUpVC" modalPresentationStyle="fullScreen" id="JiV-RY-jID"/>
                         <segue destination="E0X-sb-rUZ" kind="show" identifier="toAddPlaceVc" id="PB8-8A-9Rd"/>
+                        <segue destination="xtA-iR-djw" kind="show" identifier="toDetailsVC" id="RFa-MS-faI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thQ-xH-aCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1930" y="110"/>
+        </scene>
+        <!--DetailsVC-->
+        <scene sceneID="XE2-qU-N2r">
+            <objects>
+                <viewController id="xtA-iR-djw" customClass="DetailsVC" customModule="FoursquareCloneWithParse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r1J-wu-mZK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFh-hX-bOw">
+                                <rect key="frame" x="20" y="111" width="374" height="291"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7a-pJ-3c4">
+                                <rect key="frame" x="20" y="409" width="365" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place TypeLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utw-GF-622">
+                                <rect key="frame" x="20" y="472" width="365" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place Atmosphare Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esH-gJ-PyP">
+                                <rect key="frame" x="20" y="535" width="365" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-6U-VBB">
+                                <rect key="frame" x="0.0" y="598" width="414" height="298"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HI7-Wn-QDM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="srn-id-1Tp"/>
+                    <connections>
+                        <outlet property="detailsImage" destination="LFh-hX-bOw" id="dxz-4F-QQY"/>
+                        <outlet property="detailsMap" destination="ynw-6U-VBB" id="NBB-3o-mFW"/>
+                        <outlet property="lblPlaceAtmosphere" destination="esH-gJ-PyP" id="FNV-b0-y5O"/>
+                        <outlet property="lblPlaceName" destination="e7a-pJ-3c4" id="RfI-f9-hZr"/>
+                        <outlet property="lblPlaceType" destination="Utw-GF-622" id="Q83-Pa-QQw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cV8-lo-iPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928.985507246377" y="949.55357142857133"/>
         </scene>
         <!--Add PlaceVC-->
         <scene sceneID="DM1-gf-iYO">

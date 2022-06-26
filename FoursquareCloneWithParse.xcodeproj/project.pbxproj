@@ -18,6 +18,7 @@
 		C015B788286890D0000EFF78 /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B787286890D0000EFF78 /* PlacesVC.swift */; };
 		C015B78A2868FBD0000EFF78 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B7892868FBD0000EFF78 /* AddPlaceVC.swift */; };
 		C015B78C286900B8000EFF78 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B78B286900B8000EFF78 /* MapVC.swift */; };
+		C015B78E28690758000EFF78 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B78D28690758000EFF78 /* DetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C015B787286890D0000EFF78 /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		C015B7892868FBD0000EFF78 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 		C015B78B286900B8000EFF78 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		C015B78D28690758000EFF78 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +95,13 @@
 				C0090FBC28688A26003BFE0A /* SingUpVC.swift */,
 				C015B787286890D0000EFF78 /* PlacesVC.swift */,
 				C015B7892868FBD0000EFF78 /* AddPlaceVC.swift */,
+				C015B78B286900B8000EFF78 /* MapVC.swift */,
+				C015B78D28690758000EFF78 /* DetailsVC.swift */,
 				C0090FBE28688A26003BFE0A /* Main.storyboard */,
 				C0090FC128688A29003BFE0A /* Assets.xcassets */,
 				C0090FC328688A29003BFE0A /* LaunchScreen.storyboard */,
 				C0090FC628688A29003BFE0A /* Info.plist */,
 				C015B78528688D6B000EFF78 /* Utils.swift */,
-				C015B78B286900B8000EFF78 /* MapVC.swift */,
 			);
 			path = FoursquareCloneWithParse;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C015B78A2868FBD0000EFF78 /* AddPlaceVC.swift in Sources */,
+				C015B78E28690758000EFF78 /* DetailsVC.swift in Sources */,
 				C0090FBD28688A26003BFE0A /* SingUpVC.swift in Sources */,
 				C0090FB928688A26003BFE0A /* AppDelegate.swift in Sources */,
 				C0090FBB28688A26003BFE0A /* SceneDelegate.swift in Sources */,

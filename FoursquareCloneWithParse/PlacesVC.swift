@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Parse
 
 class PlacesVC: UIViewController {
+    let utl = Utils()
 
     @IBOutlet weak var placesTableView: UITableView!
     
@@ -15,9 +17,21 @@ class PlacesVC: UIViewController {
         super.viewDidLoad()
 
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonClicked))
+        
+        navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.plain , target: self, action: #selector(logoutButtonClicked))
     }
     
     @objc func addButtonClicked(){
         //Add Segue
+    }
+    
+    @objc func logoutButtonClicked(){
+        PFUser.logOutInBackground { error in
+            if error != nil {
+                self.present(self.utl.showBasicAlert(tit: "Error!", msg: error?.localizedDescription ?? "Error!!"), animated: true)
+            }else{
+                self.performSegue(withIdentifier: "toSingUpVC", sender: nil)
+            }
+        }
     }
 }

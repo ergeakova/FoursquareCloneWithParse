@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class ViewController: UIViewController {
+class SingUpVC: UIViewController {
 
     var utl = Utils()
     
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnSingIn(_ sender: Any) {
-        if txtUsername.text != "" && txtPassword.text != "" {
+        if utl.isEmptyString(value: txtUsername.text!) && utl.isEmptyString(value: txtPassword.text!) {
             PFUser.logInWithUsername(inBackground: txtUsername.text!, password: txtPassword.text!) { (user, error) in
                 if error != nil {
                     self.present( self.utl.showBasicAlert(tit: "Error", msg: error?.localizedDescription ?? "Error"), animated: true)
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnSingUp(_ sender: Any) {
-        if txtUsername.text != "" && txtPassword.text != "" {
+        if utl.isEmptyString(value: txtUsername.text!) && utl.isEmptyString(value: txtPassword.text!) {
             let user = PFUser()
             user.username = txtUsername.text!
             user.password = txtPassword.text!

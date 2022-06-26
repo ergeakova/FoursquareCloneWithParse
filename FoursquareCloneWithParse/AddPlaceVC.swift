@@ -9,10 +9,12 @@ import UIKit
 
 class AddPlaceVC: UIViewController {
 
+    var utl = Utils()
+    
     @IBOutlet weak var txtPlaceName: UITextField!
     @IBOutlet weak var txtPlaceType: UITextField!
     @IBOutlet weak var txtPlaceAtmosphere: UITextField!
-    @IBOutlet weak var PlaceImageView: UIImageView!
+    @IBOutlet weak var placeImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +22,10 @@ class AddPlaceVC: UIViewController {
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {
+        if utl.isEmptyString(value: txtPlaceName.text!) && utl.isEmptyString(value: txtPlaceType.text!) {
+            self.performSegue(withIdentifier: "toMapVC", sender: nil)
+        } else{
+            self.present(utl.showBasicAlert(tit: "Error!" , msg: "Place Image, Place name and Place type cannot be empty!"), animated: true)
+        }
     }
 }

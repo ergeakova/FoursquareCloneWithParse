@@ -26,8 +26,7 @@ class ViewController: UIViewController {
                 if error != nil {
                     self.present( self.utl.showBasicAlert(tit: "Error", msg: error?.localizedDescription ?? "Error"), animated: true)
                 }else{
-                    print("welcome")
-                    print(user?.username)
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 }
             }
         }
@@ -45,8 +44,7 @@ class ViewController: UIViewController {
                 if error != nil {
                     self.present(self.utl.showBasicAlert(tit: "Error!", msg: error?.localizedDescription ?? "Error!!"), animated: true)
                 }else{
-                    //seque
-                    print("OK!")
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 }
             }
         }

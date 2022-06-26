@@ -15,6 +15,7 @@
 		C0090FC228688A29003BFE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0090FC128688A29003BFE0A /* Assets.xcassets */; };
 		C0090FC528688A29003BFE0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0090FC328688A29003BFE0A /* LaunchScreen.storyboard */; };
 		C015B78628688D6B000EFF78 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B78528688D6B000EFF78 /* Utils.swift */; };
+		C015B788286890D0000EFF78 /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B787286890D0000EFF78 /* PlacesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C0090FC428688A29003BFE0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0090FC628688A29003BFE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C015B78528688D6B000EFF78 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C015B787286890D0000EFF78 /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				C0090FB828688A26003BFE0A /* AppDelegate.swift */,
 				C0090FBA28688A26003BFE0A /* SceneDelegate.swift */,
 				C0090FBC28688A26003BFE0A /* ViewController.swift */,
+				C015B787286890D0000EFF78 /* PlacesVC.swift */,
 				C0090FBE28688A26003BFE0A /* Main.storyboard */,
 				C0090FC128688A29003BFE0A /* Assets.xcassets */,
 				C0090FC328688A29003BFE0A /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 				C0090FB928688A26003BFE0A /* AppDelegate.swift in Sources */,
 				C0090FBB28688A26003BFE0A /* SceneDelegate.swift in Sources */,
 				C015B78628688D6B000EFF78 /* Utils.swift in Sources */,
+				C015B788286890D0000EFF78 /* PlacesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

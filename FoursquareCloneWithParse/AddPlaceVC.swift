@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddPlaceVC: UIViewController {
+class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var utl = Utils()
     
@@ -18,7 +18,9 @@ class AddPlaceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        placeImageView.isUserInteractionEnabled = true
+        let gestureRecongnizer = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+        placeImageView.addGestureRecognizer(gestureRecongnizer)
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {
@@ -27,5 +29,17 @@ class AddPlaceVC: UIViewController {
         } else{
             self.present(utl.showBasicAlert(tit: "Error!" , msg: "Place Image, Place name and Place type cannot be empty!"), animated: true)
         }
+    }
+    
+    @objc func chooseImage(){
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        self.present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        placeImageView.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true)
     }
 }

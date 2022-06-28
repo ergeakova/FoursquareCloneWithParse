@@ -24,7 +24,16 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {
-        if utl.isEmptyString(value: txtPlaceName.text!) && utl.isEmptyString(value: txtPlaceType.text!) {
+        if utl.isEmptyString(value: txtPlaceName.text!) && utl.isEmptyString(value: txtPlaceType.text!)  && utl.isEmptyString(value: txtPlaceAtmosphere.text!) {
+            
+            
+            if let choosenImage = placeImageView.image  {
+                AddPlaceModel.sharedInstance.placeName = txtPlaceName.text!
+                AddPlaceModel.sharedInstance.PlaceType = txtPlaceType.text!
+                AddPlaceModel.sharedInstance.placeAtmosphere = txtPlaceAtmosphere.text!
+                AddPlaceModel.sharedInstance.placeImage = choosenImage
+            }
+            
             self.performSegue(withIdentifier: "toMapVC", sender: nil)
         } else{
             self.present(utl.showBasicAlert(tit: "Error!" , msg: "Place Image, Place name and Place type cannot be empty!"), animated: true)

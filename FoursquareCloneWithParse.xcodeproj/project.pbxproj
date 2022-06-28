@@ -19,6 +19,7 @@
 		C015B78A2868FBD0000EFF78 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B7892868FBD0000EFF78 /* AddPlaceVC.swift */; };
 		C015B78C286900B8000EFF78 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B78B286900B8000EFF78 /* MapVC.swift */; };
 		C015B78E28690758000EFF78 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B78D28690758000EFF78 /* DetailsVC.swift */; };
+		C015B794286A60E9000EFF78 /* AddPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015B793286A60E9000EFF78 /* AddPlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C015B7892868FBD0000EFF78 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 		C015B78B286900B8000EFF78 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		C015B78D28690758000EFF78 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		C015B793286A60E9000EFF78 /* AddPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		C0090FB728688A26003BFE0A /* FoursquareCloneWithParse */ = {
 			isa = PBXGroup;
 			children = (
+				C015B792286A60A6000EFF78 /* Models */,
 				C0090FB828688A26003BFE0A /* AppDelegate.swift */,
 				C0090FBA28688A26003BFE0A /* SceneDelegate.swift */,
 				C0090FBC28688A26003BFE0A /* SingUpVC.swift */,
@@ -104,6 +107,14 @@
 				C015B78528688D6B000EFF78 /* Utils.swift */,
 			);
 			path = FoursquareCloneWithParse;
+			sourceTree = "<group>";
+		};
+		C015B792286A60A6000EFF78 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C015B793286A60E9000EFF78 /* AddPlaceModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 				C0090FBB28688A26003BFE0A /* SceneDelegate.swift in Sources */,
 				C015B78C286900B8000EFF78 /* MapVC.swift in Sources */,
 				C015B78628688D6B000EFF78 /* Utils.swift in Sources */,
+				C015B794286A60E9000EFF78 /* AddPlaceModel.swift in Sources */,
 				C015B788286890D0000EFF78 /* PlacesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

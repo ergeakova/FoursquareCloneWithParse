@@ -13,6 +13,7 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let utl = Utils()
     var placesNameArray = [String]()
     var placeIdArray = [String]()
+    var selectedPlaceId = ""
 
     @IBOutlet weak var placesTableView: UITableView!
     
@@ -66,7 +67,6 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                             if let placeId = object.objectId{
                                 self.placesNameArray.append(placeName)
                                 self.placeIdArray.append(placeId)
-                                print(placeName)
                             }
                         }
                     }
@@ -74,6 +74,17 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 self.placesTableView.reloadData()
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPlaceId = placeIdArray[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC  = segue.destination as! DetailsVC
+            destinationVC.chosenPlaceId = selectedPlaceId
         }
     }
 }

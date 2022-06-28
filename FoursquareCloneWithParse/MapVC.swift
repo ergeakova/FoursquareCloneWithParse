@@ -7,11 +7,13 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
+    var utl = Utils()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,26 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
     }
     @objc func saveButtonCliked(){
         
+        let placemodel = AddPlaceModel.sharedInstance
+        
+        let object = PFObject(className: "Places")
+        object["name"] = placemodel.placeName
+        object["type"] = placemodel.PlaceType
+        object["atmosphere"] = placemodel.placeAtmosphere
+        object["lat"] = placemodel.latitude
+        object["long"] = placemodel.longitude
+
+        if let imageData = placemodel.placeImage.jpegData(compressionQuality: 0.5) {
+            object["image"] = PFFileObject(data: imageData)
+        }
+        
+        object.saveInBackground{ (succes, error) in
+            if error != nil {
+                self.present( self.utl.showBasicAlert(tit: "Error!", msg: error?.localizedDescription ?? "Place could not be loaded!"), animated: true )
+            }else {
+                self.performSegue(withIdentifier: "FromMapVCtoPlacesVC", sender: nil)
+            }
+        }
     }
     @objc func backButtonClicked(){
         self.dismiss(animated: true)

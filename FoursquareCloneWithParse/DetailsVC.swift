@@ -19,8 +19,8 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var detailsMap: MKMapView!
     
     var chosenPlaceId = ""
-    var chosenlatitude = ""
-    var chosenlongitude = ""
+    var chosenlatitude = Double()
+    var chosenlongitude = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +50,15 @@ class DetailsVC: UIViewController {
                     }
                     
                     if let placeLatitude = chosenObject.object(forKey: "lat") as? String{
-                        self.chosenlatitude = placeLatitude
+                        if let latDouble = Double(placeLatitude) {
+                            self.chosenlatitude = latDouble
+                        }
                     }
 
                     if let placeLongitude = chosenObject.object(forKey: "long") as? String {
-                        self.chosenlongitude = placeLongitude
+                        if let longDouble = Double(placeLongitude){
+                            self.chosenlongitude = longDouble
+                        }
                     }
                     
                     if let imageData = chosenObject.object(forKey: "image") as? PFFileObject {
@@ -66,8 +70,23 @@ class DetailsVC: UIViewController {
                             }
                         }
                     }
+        
+                    self.showMapDetails()
                 }
             }
         }
+    }
+    
+    func showMapDetails(){
+        let location = CLLocationCoordinate2D(latitude: self.chosenlatitude, longitude: self.chosenlongitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.035, longitudeDelta: 0.035)
+        let region = MKCoordinateRegion(center: location, span: span)
+        self.detailsMap.setRegion(region, animated: true)
+        let anotation = MKPointAnnotation()
+        
+        anotation.coordinate = location
+        anotation.title = self.lblPlaceName.text!
+        anotation.subtitle = self.lblPlaceType.text!
+        self.detailsMap.addAnnotation(anotation)
     }
 }

@@ -42,6 +42,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
             annotation.title = AddPlaceModel.sharedInstance.placeName
             annotation.subtitle = AddPlaceModel.sharedInstance.PlaceType
             
+            let allAnnotations = self.mapView.annotations
+            self.mapView.removeAnnotations(allAnnotations)
             self.mapView.addAnnotation(annotation)
             
             AddPlaceModel.sharedInstance.latitude = String(coordinates.latitude)
@@ -55,6 +57,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
         let region = MKCoordinateRegion(center: location, span: span)
         mapView.setRegion(region, animated: true)
     }
+    
     @objc func saveButtonCliked(){
         
         let placemodel = AddPlaceModel.sharedInstance
